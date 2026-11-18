@@ -1,3 +1,9 @@
+// The global tooltip content is force-mounted, so its positioning wrapper stays in the DOM after it closes.
+// Tooltips are never interactive; make sure the wrapper doesn't intercept pointer events either.
+[data-reka-popper-content-wrapper]:has(> .tooltip) {
+	pointer-events: none;
+}
+
 .tooltip {
 	--tooltip-foreground-color: var(--foreground-inverted);
 	--tooltip-background-color: var(--background-inverted);
